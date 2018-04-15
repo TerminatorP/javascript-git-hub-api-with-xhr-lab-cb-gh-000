@@ -6,10 +6,10 @@ function displayRepositories(event, data) {
       r =>
         `<li><strong><a href=
          "${r.html_url}" target="_blank">
-        ${r.name}</a></strong> - <a href="#" data-repo="${
+        ${r.name}</a></strong> - <a href="#" data-repository="${
           r.name
         }" data-username="${r.owner.login}" onclick="getCommits(this)">Get Commits</a> -
-        <a href="#" data-repo="${
+        <a href="#" data-repository="${
           r.name
         }" data-username="${r.owner.login}" onclick="getBranches(this)">Get Branches</a>
         </li>`
@@ -39,7 +39,7 @@ function displayCommits() {
 }
 function getCommits(el) {
   const username = el.dataset.username;
-  const repository = el.dataset.repo;
+  const repository = el.dataset.repository;
   const req = new XMLHttpRequest();
   req.addEventListener("load", displayCommits);
   req.open("GET", `https://api.github.com/repos/${username}/${repository}/commits`);
@@ -54,7 +54,7 @@ function displayBranches() {
 }
 function getBranches(el) {
   const username = el.dataset.username;
-  const repository = el.dataset.repo;
+  const repository = el.dataset.repository;
   const req = new XMLHttpRequest();
   req.addEventListener("load", displayBranches);
   req.open("GET", `https://api.github.com/repos/${username}/${repository}/branches`);
