@@ -8,7 +8,7 @@ function handleResponse(event, data) {
          "${r.html_url}" target="_blank">
         ${r.name}</a></strong> - <a href="#" data-repo="${
           r.name
-        }" onclick="getCommits(this)">Get Commits</a></li>`
+        }" data-username="${r.owner.full_name}" onclick="getCommits(this)">Get Commits</a></li>`
     )
     .join("")}</ul>`;
   document.getElementById("repositories").innerHTML = repoList;
@@ -35,7 +35,7 @@ function displayCommits() {
   console.log(commits);
 }
 function getCommits(el) {
-  let username = document.getElementById("username").value;
+  const username = el.dataset.username;
   const name = el.dataset.repo;
   const req = new XMLHttpRequest();
   req.addEventListener("load", displayCommits);
