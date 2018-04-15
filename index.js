@@ -47,7 +47,10 @@ function getCommits(el) {
   req.send();
 }
 function displayBranches() {
-  console.log(JSON.parse(this.reponseText));
+  const branches = JSON.parse(this.responseText);
+  const branchesList = `<ul>${branches.map(
+    branch => `<li>${branch.name}</li>`
+  ).join("")}</ul>`
 }
 function getBranches(el) {
   const username = el.dataset.username;
