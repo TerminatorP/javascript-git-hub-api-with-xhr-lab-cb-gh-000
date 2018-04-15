@@ -36,7 +36,6 @@ function displayCommits() {
     )
     .join("")}</ul>`;
   document.getElementById("details").innerHTML = commitsList;
-  console.log(commits);
 }
 function getCommits(el) {
   const username = el.dataset.username;
