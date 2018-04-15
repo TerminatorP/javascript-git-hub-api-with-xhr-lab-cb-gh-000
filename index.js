@@ -18,7 +18,6 @@ function displayRepositories(event, data) {
   document.getElementById("repositories").innerHTML = repoList;
 }
 function getRepositories() {
-  event.preventDefault();
   let username = document.getElementById("username").value;
   const req = new XMLHttpRequest();
   req.addEventListener("load", displayRepositories);
