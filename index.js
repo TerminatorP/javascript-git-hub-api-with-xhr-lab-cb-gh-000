@@ -46,3 +46,10 @@ function getCommits(el) {
   req.open("GET", `https://api.github.com/repos/${username}/${name}/commits`);
   req.send();
 }
+function getBranches(el) {
+  const username = el.dataset.username;
+  const.name = el.dataset.repo;
+  cont req = new XMLHttpRequest();
+  req.addEventListener("load", displayBranches);
+  req.open("GET", `https://api.github.com/repos/${username}/${name}/branches`)
+}
