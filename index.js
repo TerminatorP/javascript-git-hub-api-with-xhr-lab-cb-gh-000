@@ -8,7 +8,11 @@ function handleResponse(event, data) {
          "${r.html_url}" target="_blank">
         ${r.name}</a></strong> - <a href="#" data-repo="${
           r.name
-        }" data-username="${r.owner.login}" onclick="getCommits(this)">Get Commits</a></li>`
+        }" data-username="${r.owner.login}" onclick="getCommits(this)">Get Commits</a> -
+        <a href="#" data-repo="${
+          r.name
+        }" data-username="${r.owner.login}" onclick="getCommits(this)">Get Commits</a>
+        </li>`
     )
     .join("")}</ul>`;
   document.getElementById("repositories").innerHTML = repoList;
