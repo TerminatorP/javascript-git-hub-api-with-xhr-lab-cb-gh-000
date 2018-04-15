@@ -28,7 +28,7 @@ function displayCommits() {
   const commitsList = `<ul>${commits
     .map(
       commit =>
-        `<li><strong>${commit.author.login}</strong>,${commit.commit.name} - ${commit.commit.message}</li>`
+        `<li><strong>${commit.author.login}</strong>,${commit.commit.author.name} - ${commit.commit.message}</li>`
     )
     .join("")}</ul>`;
   document.getElementById("details").innerHTML = commitsList;
