@@ -11,7 +11,7 @@ function handleResponse(event, data) {
         }" data-username="${r.owner.login}" onclick="getCommits(this)">Get Commits</a> -
         <a href="#" data-repo="${
           r.name
-        }" data-username="${r.owner.login}" onclick="getCommits(this)">Get Commits</a>
+        }" data-username="${r.owner.login}" onclick="getBranches(this)">Get Branches</a>
         </li>`
     )
     .join("")}</ul>`;
