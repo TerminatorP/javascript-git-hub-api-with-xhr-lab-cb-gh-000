@@ -17,7 +17,7 @@ function displayRepositories(event, data) {
     .join("")}</ul>`;
   document.getElementById("repositories").innerHTML = repoList;
 }
-function getRepositories(e) {
+function getRepositories() {
   event.preventDefault();
   let username = document.getElementById("username").value;
   const req = new XMLHttpRequest();
