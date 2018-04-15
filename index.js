@@ -51,7 +51,7 @@ function displayBranches() {
   const branchesList = `<ul>${branches.map(
     branch => `<li>${branch.name}</li>`
   ).join("")}</ul>`
-  console.log(branchesList)
+  document.getElementById("details").innerHTML = branchesList;
 }
 function getBranches(el) {
   const username = el.dataset.username;
