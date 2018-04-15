@@ -49,4 +49,5 @@ function getCommits(el) {
 function getBranches(el) {
   const username = el.dataset.username;
   const name = el.dataset.repo;
+  console.log(username, name);
 }
